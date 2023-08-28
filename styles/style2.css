@@ -1,0 +1,327 @@
+/* Student Dashboard */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    height: 100vh;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    background-color: #ccc;
+}
+
+/* =============== Sidebar Start ================= */
+
+nav{
+    position: fixed;
+    background: #fff;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 260px;
+    align-items: center;
+    text-align: center;
+    box-shadow: 2px 1px 5px #aaaaaa;
+}
+.logo{
+    position: fixed;
+    display: flex;
+    margin: 0 22px;
+    align-items: center;
+    width: 260px;
+    height: 70px;
+    padding-left: 9px;
+    margin-left: 1px;
+    border-bottom: 2px solid #faf9f6;
+}
+img{
+    height: 50px;
+    width: 50px;
+}
+label{
+    font-size: 25px;
+    font-weight: 600;
+    font-family: cursive;
+    letter-spacing: 10px;
+    margin-left: 20px;
+}
+label .text{
+    color: orangered;
+    letter-spacing: 10px;
+}
+.side-bar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-top: 72px;
+    height: 100%;
+    width: 260px;
+    padding: 20px 0;
+    padding-bottom: 90px;
+    overflow-y: scroll;
+}
+.side-bar::-webkit-scrollbar{
+    width: 0;
+}
+.side-bar ul{
+    text-align: left;
+    font-size: 18px;
+    font-weight: 500;
+}
+.side-bar li{
+    list-style: none;
+}
+.side-bar ul li .sub-menu{
+    padding: 6px 6px 14px 40px;
+    background: #aaaaaa;
+    margin-top: -10px;
+    display: none;
+}
+.side-bar ul li .showMenu .sub-menu{
+    display: block;
+}
+.side-bar ul li .sub-menu{
+    padding: 6px 6px 14px 40px;
+    background: #aaaaaa;
+    margin-top: -10px;
+}
+.side-bar li .sub-menu li a:hover{
+    background: none;
+    color: #4070f4;
+}
+.side-bar li a{
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #707070;
+    padding: 17px 20px;
+    transition: 0.5s;
+}
+li a i{
+    margin-left: 80px;
+    font-size: 16px;
+}
+.active{
+    background: #eee;
+}
+.active,
+.icon.active{
+    background: #4070f4;
+    color: #fff;
+}
+a:hover{
+    background: #4070f4;
+}
+a:hover .icon,
+a:hover .nav-items{
+    color: #fff;
+}
+a .icon{
+    margin-right: 15px;
+    color: #707070;
+}
+
+/* =============== Sidebar End ================= */
+
+/* ============ resuable codes ================== */
+
+section{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    margin-left: 260px;
+    overflow-y: scroll;
+    margin-top: 70px;
+}
+
+section::-webkit-scrollbar{
+    width: 0;
+}
+
+/* ===================== Student Profile =================== */
+
+.std-profile{
+    padding: 15px;
+    padding-right: 273px;
+    padding-bottom: 78px;
+}
+.std-profile .std-content{
+    background: #fff;
+    height: 120vh;
+    box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.5);
+}
+.std-content .top-content{
+    padding: 18px;
+    border-bottom: 1px solid #aaaaaa;
+}
+.top-content .title{
+    font-size: 17px;
+    letter-spacing: 1px;
+    color: gray;
+}
+.std-content .middle-content{
+    padding: 18px;
+}
+.std-content .middle-content .top-middle{
+    display: flex;
+    align-items: center;
+}
+.std-content .middle-content .top-middle img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-right: 30px;
+}
+.std-content .middle-content .top-middle .name{
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.std-content .middle-content .middle-middle{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+.std-content .middle-content .middle-middle .tabs{
+    padding: 1px;
+    width: 100%;
+    margin-bottom: 40px;
+    background: #ccc;
+    display: flex;
+    flex-direction: row;
+}
+.std-content .middle-content .middle-middle button{
+    background: #fff;
+    width: 100%;
+    text-decoration: none;
+    padding: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 2px;
+}
+
+.middle-middle .tabs-content .title{
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: gray;
+}
+.middle-middle .tabs-content .personal-info{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.middle-middle .tabs-content .personal-info .details{
+    margin-top: 20px;
+}
+.middle-middle .tabs-content .personal-info .details label{
+    font-size: 20px;
+    letter-spacing: 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.middle-middle .tabs-content .personal-info .details .add{
+    font-size: 16px;
+}
+.middle-middle .tabs-content .personal-info .details .per-det{
+    font-size: 17px;
+    color: gray;
+}
+.middle-middle .tabs-content{
+    margin-top: 70px;
+    position: absolute;
+    display: none;
+    width: 70%;
+}
+.middle-middle .tabs-content input{
+    height: 50px;
+    border: 1px solid #aaaaaa;
+    outline: none;
+    border-radius: 5px;
+    padding-left: 10px;
+    margin-left: 30px;
+}
+#tabs-content1{
+    display: block;
+}
+
+
+
+/* ==================== Student Dashboard section content ========== */
+
+.std-dashboard {
+    padding: 15px;
+    padding-right: 273px;
+    padding-bottom: 78px;
+}
+.std-dashboard .dashboard-content{
+    background: #fff;
+    box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.5);
+}
+.dashboard-content .top-content{
+    padding: 18px;
+    border-bottom: 1px solid #aaaaaa;
+}
+.std-dashboard .dashboard-content .top-content .title{
+    font-size: 17px;
+    letter-spacing: 1px;
+    color: gray;
+}
+.std-dashboard .dashboard-content .card{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px;
+}
+.card .card1,
+.card .card2,
+.card .card3,
+.card .card4{
+    background: #fff;
+    margin: 3px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 500px;
+    height: 400px;
+}
+.card .card3,
+.card .card4{
+    margin-top: 15px;
+}
+.card .card1 .title,
+.card .card2 .title,
+.card .card3 .title,
+.card .card4 .title{
+    padding: 18px;
+    border-bottom: 1px solid #aaaaaa;
+}
+.card .card1 .title span,
+.card .card2 .title span,
+.card .card3 .title span,
+.card .card4 .title span{
+    font-size: 18px;
+    color: #707070;
+}
+.card .card-content{
+    height: 330px;
+    width: 498px;
+}
+#piechart{
+    height: 100%;
+}
+#linechart_material{
+    height: 100%;
+}
+#barchart_material{
+    height: 100%;
+}

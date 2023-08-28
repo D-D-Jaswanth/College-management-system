@@ -1,0 +1,1683 @@
+/* Student Dashboard */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    height: 100vh;
+    /* position: fixed; */
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    background-color: #ccc;
+    overflow: hidden;
+}
+
+/* =============== Sidebar Start ================= */
+
+nav{
+    position: fixed;
+    background: #fff;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 2px 1px 5px #aaaaaa;
+    z-index: 1;
+}
+.logo{
+    position: fixed;
+    display: flex;
+    margin: 0 22px;
+    align-items: center;
+    width: 260px;
+    height: 70px;
+    padding-left: 9px;
+    margin-left: 40px;
+    /* border-bottom: 2px solid #faf9f6; */
+}
+img{
+    height: 50px;
+    width: 50px;
+}
+label{
+    font-size: 25px;
+    font-weight: 600;
+    font-family: cursive;
+    letter-spacing: 10px;
+    margin-left: 20px;
+}
+label .text{
+    color: orangered;
+    letter-spacing: 10px;
+}
+.side-bar{
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    margin-top: 72px;
+    height: 100%;
+    padding: 20px 0;
+    /* padding-bottom: 90px; */
+    overflow-y: scroll;
+}
+.side-bar::-webkit-scrollbar{
+    width: 0;
+}
+.side-bar ul{
+    text-align: left;
+    font-size: 18px;
+    font-weight: 500;
+}
+.side-bar li{
+    list-style: none;
+}
+
+
+/* .side-bar ul li .sub-menu{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background: #ccc;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sub-menu a{
+    padding-left: 60px;
+    text-decoration: none;
+}
+.side-bar ul li:hover .sub-menu{
+    opacity: 1;
+    pointer-events: auto;
+}
+.side-bar li .sub-menu li a:hover{
+    background: none !important;
+    color: #4070f4;
+} */
+
+
+.side-bar li a{
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #707070;
+    padding: 17px 20px;
+    transition: 0.5s;
+    border-radius: 5px;
+}
+li a i{
+    margin-left: 80px;
+    font-size: 16px;
+}
+.active{
+    background: #eee;
+}
+.active,
+.icon.active{
+    background: #4070f4;
+    color: #fff;
+}
+a:hover{
+    background: #4070f4;
+}
+a:hover .icon,
+a:hover .nav-items{
+    color: #fff;
+}
+a .icon{
+    margin-right: 15px;
+    color: #707070;
+}
+
+
+
+
+
+/* =============== Sidebar End ================= */
+
+/* ============ resuable codes ================== */
+
+section{
+    /* position: fixed; */
+    height: 100%;
+    width: 100%;
+    margin-left: 260px;
+    overflow-y: scroll;
+    /* margin-top: 70px; */
+}
+ 
+section::-webkit-scrollbar{
+    width: 0;
+}
+
+
+/*table{
+    width: 90%;
+}
+table, th, td{
+    border: 1px solid #faf9f6;
+    border-collapse: collapse;
+}
+th{
+    font-weight: 600;
+}
+th, td{
+    height: 60px;
+}*/
+/* ============= Middle Content Start=============== */
+
+
+
+/* =======Middle Content Header start ======*/
+.top-header{
+    position: fixed;
+    background: #fff;
+    height: 68px;
+    width: 100%;
+    margin-left: 260px;
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+    box-shadow: 2px 1px 5px #aaaaaa;
+}
+.top-header .icon-right{
+    font-size: 25px;
+    cursor: pointer;
+}
+.main{
+    background: #E5E4E2;
+    border-radius: 10px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    width: 600px;
+    margin-left: 100px;
+}
+.main .icon-search{
+    margin-left: 20px;
+}
+.main input{
+    height: 50px;
+    background: none;
+    border: none;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 15px;
+    outline: none;
+}
+
+/* =======Middle Content Header End ====== */
+
+#middlecontent{
+    height: 100vh;
+    padding: 90px 268px 10px 20px;
+    width: 100%;
+    /* padding-bottom: 75px;
+    padding-right: 268px;  */
+    /* overflow-y: scroll;  */
+}
+
+#middlecontent .tabs{
+    height: 140px;
+    margin-top: 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.tabs .tabs-1,
+.tabs .tabs-2,
+.tabs .tabs-3,
+.tabs .tabs-4{
+    height: 140px;
+    width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.23);
+}
+.tabs .details{
+    height: 70px;
+}
+.tabs .details .tab-icon{
+    font-size: 25px;
+}
+.tabs .details span{
+    font-size: 18px;
+    padding-left: 20px;
+    color: #707070;
+}
+.tabs .tab-icon{
+    font-size: 20px;
+    display: flex;
+    padding-left: 40px;
+    padding-bottom: 10px;
+    color: #707070;
+}
+.tabs .count span{
+    font-size: 18px;
+    padding-right: 20px;
+    color: #707070;
+}
+.rec{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+.rec-view{
+    background-color: #fff;
+    height: 100%;
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 20px;
+    margin-right: 20px;
+    width: 50%;
+}
+.rec-sear{
+    background-color: #fff;
+    height: 100%;
+    width: 50%;
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 20px;
+}
+.rec-view span,
+.rec-sear span{
+    color: #fff;
+    border-radius: 5px;
+    background-color: #707070;
+    letter-spacing: 1px;
+}
+.rec .rec-details{
+    height: 385px;
+    width: auto;
+    border-radius: 10px;
+    margin: 5px 5px;
+}
+
+/* ============= Middle Content End=============== */
+
+
+
+/* ============================== Profile Section =================== */
+
+.item_profile{
+    height: 100vh;
+    /* padding: 20px; */
+    width: 100%;
+    padding: 90px 268px 0px 20px;
+    /* padding-right: 268px; */
+}
+.item_profile .title{
+    font-size: 20px;
+}
+.personal{
+    background: #fff;
+    width: 100%;
+    height: 500px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+}
+.personal img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+.personal .details{
+    margin-top: 10px;
+    padding: 20px;
+}
+.personal .details .name{
+    margin-right: 20px;
+}
+.personal .details label{
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0;
+    font-weight: 400;
+    font-size: 20px;
+}
+.personal .btn{
+    margin-top: 30px;
+}
+.personal .btn a{
+    background: #4070f4;
+    text-decoration: none;
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+
+
+.item_update_profile{
+    width: 100%;
+    height: 100vh;
+    /* padding-left: 20px; */
+    width: 100%;
+    /* padding-bottom: 75px;
+    padding-right: 268px; */
+    padding: 90px 268px 10px 20px;
+}
+.item_update_profile .title{
+    font-size: 20px;
+}
+.personal_update{
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 8px;
+    width: 100%;
+}
+
+form{
+    background: #fff;
+    text-align: center;
+    padding-bottom: 20px;
+    border-radius: 5px;
+}
+.personal_update .details{
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: left;
+}
+.personal_update .details label{
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0;
+    font-weight: 400;
+    font-size: 17px;
+    margin-left: 0;
+}
+.personal_update .details input{
+    height: 60px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 17px;
+    padding-left: 10px;
+    outline: none;
+}
+form .btn{
+    margin-top: 10px;
+}
+form .btn .update-profile-btn{
+    background: #4070f4;
+    text-decoration: none;
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+} 
+form .personal_update .details .image{
+    padding: 18px;
+}
+
+
+/*#popup{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.30);
+    background-color: #fff;
+    transition: 0.5s;
+    padding: 10px;
+    border-radius: 8px;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#popup .close-btn{
+    margin-top: 30px;
+    align-items: center;
+}
+.close-btn .icon-close{
+    color: #707070;
+    padding-left: 490px;
+    cursor: pointer;
+}
+#popup.active{
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+#popup .user-details{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+#popup .user-details .name{
+    display: flex;
+    gap: 10px;
+}
+.user-details .input-box{
+    height: 100px;
+    margin: 2px;
+}
+
+#popup .user-details .input-box .details{
+    font-size: 15px;
+    font-weight: 500;
+    color: #707070;
+    padding-left: 0;
+}
+.user-details .input-box input{
+    height: 50px;
+    width: 100%;
+    border: 1px solid #ccc;
+    outline: none;
+    background: #faf9f6;
+    padding-left: 15px;
+    border-radius: 5px;
+}
+#popup .user-details .input-box .image{
+    padding: 13px;
+}
+#popup .btns{
+    width: 100%;
+    padding: 10px;
+}
+#popup #close{
+    height: 50px;
+    width: 100px;
+    font-size: 16px;
+    border-radius: 10px;
+    background: #FF4433;
+    border: none;
+    outline: none;
+    color: #fff;
+    margin-left: 160px;
+}
+#popup #save{
+    height: 50px;
+    width: 100px;
+    font-size: 16px;
+    border-radius: 10px;
+    background: #4070f4;
+    border: none;
+    outline: none;
+    color: #fff;
+}
+*/
+
+
+
+/* ==================== Manage class rooms ================ */
+
+.item_room{
+    height: 100vh;
+    width: 100%;
+    /* padding: 20px;
+    padding-bottom: 75px;
+    padding-right: 265px; */
+    padding: 90px 268px 10px 20px;
+    overflow-y: scroll;
+}
+.item_room .title{
+    font-size: 20px;
+}
+.item_room .room_content{
+    background: #fff;
+    text-align: right;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.room_content form{
+    padding: 20px;
+}
+form .select{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+.select select{
+    height: 50px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #aaaaaa;
+    outline: none;
+    font-size: 15px;
+}
+.room-btn{
+    margin-top: 20px;
+}
+.room-btn button{
+    border: none;
+    border-radius: 5px;
+    background: #4070f4;
+    color: #fff;
+    padding: 15px;
+    width: 100px;
+    font-size: 15px;
+}
+.room-table{
+    border: 1px solid #aaaaaa;
+    height: 100%;
+    border-collapse: collapse;
+}
+
+.edit-room{
+    background: #4070f4;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    color: #fff;
+    padding: 12px;
+    border-radius: 5px;
+}
+.delete-room{
+    background: red;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    color: #fff;
+    padding: 12px;
+    border-radius: 5px;
+}
+.delete-room:hover{
+    background: red;
+}
+
+
+
+/* ============= Student & Faculty Content Start=============== */
+
+.item_std,
+.item_fact{
+    height: 100vh;
+    width: 100%;
+    /* padding: 20px;
+    padding-bottom: 75px;
+    padding-right: 265px; */
+    padding: 90px 268px 10px 20px;
+    overflow-y: scroll;
+}
+.item_std .title,
+.item_fact .title{
+    font-size: 20px;
+}
+.item_std .std_content,
+.item_fact .fact_content{
+    background: #fff;
+    text-align: right;
+    padding-top: 20px;
+    border-radius: 5px;
+}
+.std_content .search-box,
+.fact_content .search-box{
+    text-align: center;
+    padding: 10px 50px;
+}
+.std_content .search-box form,
+.fact_content .search-box form{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.std_content .search-box form .btn-course,
+.fact_content .search-box form .btn-course{
+    margin-left: 30px;
+}
+.std_content .search-box form .btn-course a,
+.fact_content .search-box form .btn-course a{
+    align-items: center;
+    text-decoration: none;
+    background: #4070f4;
+    display: flex;
+    padding: 12px;
+    border-radius: 5px;
+    width: 160px;
+    color: #fff;
+    gap: 5px;
+}
+.search-btn{
+    margin-left: 20px;
+}
+.search-btn button{
+    padding: 15px;
+    background: #4070f4;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+}
+.search-box .s_box,
+.search-box .f_box{
+    background: #E5E4E2;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    padding-left: 20px;
+    width: 100%;
+}
+.s_box .search-icon,
+.f_box .search-icon{
+    font-size: 25px;
+    margin-right: 10px;
+}
+.s_box input,
+.f_box input{
+    height: 60px;
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    padding-right: 30px;
+}
+
+.std_content .std-btn,
+.fact_content .fact-btn{
+    padding: 20px;
+    padding-right: 50px;
+    text-align: center;
+}
+.std-btn .std_btn,
+.fact-btn .fact_btn{
+    background: #4070f4;
+    text-decoration: none;
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+.std-container,
+.fact-container{
+    padding: 20px;
+}
+
+.std-container table,
+.fact-container table{
+    height: 100%;
+    border-collapse: collapse;
+}
+.item_std .std-container td, th ,
+.item_fact .fact-container td, th{
+    border: 1px solid #ccc;
+    text-align: left;
+    padding: 15px;
+}
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+.action-btns{
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+.action-btns a:nth-child(1){
+    background: red;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.action-btns a:nth-child(2){
+    background: #4070f4;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.std_content .boxes{
+    padding: 5px;
+    text-align: left;
+}
+.boxes .nameroll{
+    display: flex;
+    gap: 10px;
+}
+.nameroll input{
+    height: 50px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #ccc;
+    width: 100%;
+    padding-left: 10px;
+    font-size: 16px;
+}
+.boxes .selectinputs{
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+.selectinputs select{
+    height: 50px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+
+
+
+/* ==================== Add students ======================== */
+
+.add-std,
+.add-fact{
+    height: 100vh;
+    width: 100%;
+    padding: 90px 268px 10px 20px;
+    /* padding: 20px;
+    padding-bottom: 75px;
+    padding-right: 268px; */
+}
+.add-std .title,
+.add-fact .title{
+    font-size: 20px;
+}
+.add-std .add-std-container,
+.add-fact .add-fact-container{
+    background: #fff;
+    height: 76vh;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.std-form,
+.fact-form{
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+}
+.std-form .input,
+.fact-form .input{
+    display: flex;
+    flex-direction: column;
+}
+.input .std-names{
+    font-size: 17px;
+    margin: 5px;
+}
+.input input{
+    height: 50px;
+    font-size: 16px;
+    margin: 5px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #ccc;
+    padding-left: 10px;
+}
+.std-form .add-std-btn,
+.fact-form .add-fact-btn{
+    padding: 10px;
+}
+.add-std-btn button,
+.add-fact-btn button{
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    background: #4070f4;
+}
+
+
+/* ==================== Display Page ================== */
+
+.item_display_std,
+.item_display_fact{
+    height: 100vh;
+    width: 100%;
+    padding: 90px 15px 10px 20px;
+    /* padding: 20px;
+    padding-bottom: 75px; */
+    overflow-y: scroll;
+}
+.item_display_std .title{
+    font-size: 20px;
+}
+.display_content{
+    padding-right: 250px;
+    text-align: center;
+}
+.display_content img{
+    margin-top: 30px;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+.display_container{
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+.display_container .dis_details{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 30px 200px 30px 200px;
+}
+.display_container .dis_details span{
+    text-align: left;
+    font-size: 20px;
+}
+hr{
+    color: gray;
+    margin-bottom: 20px;
+}
+.display_container .add_title{
+    font-size: 25px;
+    font-weight: 550;
+}
+.dis-btn{
+    margin-top: 50px;
+}
+.dis-btn a{
+    padding: 15px;
+    background: #4070f4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+td, th{
+    border: 1px solid #ccc;
+    text-align: left;
+    padding: 17px;
+}
+tr:nth-child(even){
+    background: #dddddd;
+}
+
+
+/* ======================= Update Student =================== */
+
+.update-std,
+.update-fact{
+    height: 100vh;
+    width: 100%;
+    /* padding: 20px;
+    padding-bottom: 75px; */
+    padding: 90px 268px 10px 20px;
+    overflow-y: scroll;
+}
+.update-std .title{
+    font-size: 20px;
+}
+.update-std-content,
+.update-fact-content{
+    margin-top: 20px;
+    background: #fff;
+    border-radius: 5px;
+}
+.update-std-content form,
+.update-fact-content form{
+    /* padding-right: 250px; */
+    padding-top: 20px;
+    width: 100%;
+}
+.update-std-container,
+.update-fact-container{
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.update-std-img,
+.update-fact-img{
+    padding: 20px;
+    text-align: center;
+}
+.update-std-img .file,
+.update-fact-img .file{
+    border: none;
+    padding: 12px 10px;
+    width: 250px;
+    margin-top: 10px;
+}
+.update-std-img img,
+.update-fact-img img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+.update--std--content--names,
+.update-std-address,
+.update-std-family,
+.update-std-personal,
+.update-adm-date,
+.update-std-edu{
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 10px;
+}
+.update--fact--content--names,
+.update-fact-address,
+.update-fact-edu,
+.update-fact-family,
+.update-fact-personal,
+.update-adm-date,
+.update-fact-edu-qua1,
+.update-fact-edu-qua2{
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 10px;
+}
+.update-std-container .update-details,
+.update-fact-container .update-details{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.update-fact-container .update-details .update-names,
+.update-std-container .update-details .update-names{
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: gray;
+}
+.update-details-radio{
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+.update-details-radio .radio-btn{
+    margin-left: 20px;
+}
+
+.update-details .update-address-details{
+    height: 50px;
+    border: 1px solid #ccc;
+    outline: none;
+    border-radius: 5px;
+    padding-left: 10px;
+    font-size: 16px;
+}
+.update-fact-container .title,
+.update-std-container .title{
+    padding-left: 10px;
+    margin-top: 20px;
+    color: gray;
+}
+.update-fact-container input,
+.update-std-container input{
+    height: 50px;
+    border: 1px solid #ccc;
+    outline: none;
+    border-radius: 5px;
+    padding-left: 10px;
+    font-size: 16px;
+}
+.update-std-agree,
+.update-fact-agree{
+    padding: 10px;
+}
+.update-agree-details{
+    display: flex;
+    flex-direction: row;
+}
+.update-agree-details input[type=checkbox]{
+    margin-right: 10px;
+}
+.update-agree-details .update-names{
+    margin-top: 15px;
+    text-align: left;
+}
+.update-std-button,
+.update-fact-button{
+    margin-top: 20px;
+}
+.update-std-button button,
+.update-fact-button button{
+    padding: 15px;
+    background: #4070f4;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+}
+
+
+/* ============= Student & Faculty Attendance Start=============== */
+
+.item_std_att,
+.item_fact_att{
+    height: 100vh;
+    width: 100%;
+    padding: 90px 268px 10px 20px;
+    /* padding: 20px;
+    padding-bottom: 75px;
+    padding-right: 265px; */
+    overflow-y: scroll;
+}
+.item_std_att .title,
+.item_fact_att .title{
+    font-size: 20px;
+}
+.item_std_att .std_att_content,
+.item_fact_att .fact_att_content{
+    background: #fff;
+    text-align: right;
+    padding-top: 20px;
+    border-radius: 5px;
+}
+.std_att_content .search-box,
+.fact_att_content .search-box{
+    text-align: center;
+    padding: 10px 50px;
+}
+.std_att_content .search-box form,
+.fact_att_content .search-box form{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.search-btn{
+    margin-left: 20px;
+}
+.search-btn button{
+    padding: 15px;
+    background: #4070f4;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+}
+.search-box .s_box,
+.search-box .f_box{
+    background: #E5E4E2;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    padding-left: 20px;
+    width: 100%;
+}
+.s_box .search-icon,
+.f_box .search-icon{
+    font-size: 25px;
+    margin-right: 10px;
+}
+.s_box input,
+.f_box input{
+    height: 60px;
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    padding-right: 30px;
+}
+
+.std_att_content .std-btn,
+.fact_att_content .fact-btn{
+    padding: 20px;
+    padding-right: 50px;
+    text-align: center;
+}
+.std-btn .std_btn,
+.fact-btn .fact_btn{
+    background: #4070f4;
+    text-decoration: none;
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+.std-att-container,
+.fact-att-container{
+    padding: 20px;
+}
+
+.std-att-container table,
+.fact-att-container table{
+    height: 100%;
+    border-collapse: collapse;
+}
+.item_std_att .std-att-container td, th ,
+.item_fact_att .fact-att-container td, th{
+    border: 1px solid #ccc;
+    text-align: left;
+    padding: 15px;
+}
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+.action-btns{
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+.action-btns a:nth-child(1){
+    background: red;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.action-btns a:nth-child(2){
+    background: #4070f4;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+
+/* ============================= Course ================== */
+
+.item_course{
+    height: 100vh;
+    width: 100%;
+    /* padding: 20px;
+    padding-bottom: 75px;
+    padding-right: 265px; */
+    padding: 90px 268px 10px 20px;
+    overflow-y: scroll;
+}
+.item_course .title{
+    font-size: 20px;
+}
+.item_course .course_content{
+    background: #fff;
+    text-align: right;
+    padding: 20px;
+    border-radius: 5px;
+}
+.course_content .btn-course{
+    padding-left: 80%;
+    padding-bottom: 20px;
+}
+.course_content .btn-course a{
+    align-items: center;
+    text-decoration: none;
+    background: #4070f4;
+    display: flex;
+    padding: 12px;
+    border-radius: 5px;
+    width: 150px;
+    color: #fff;
+    gap: 5px;
+}
+.course_content table{
+    border: 1px solid #aaaaaa;
+    border-collapse: collapse;
+}
+.course_content table td a{
+    text-decoration: none;
+}
+.course_content table td a:nth-child(1){
+    background: seagreen;
+    padding: 10px;
+    color: #fff;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.course_content table td a:nth-child(2){
+    background: crimson;
+    padding: 10px;
+    color: #fff;
+    border-radius: 5px;
+}
+form {
+    text-align: left;
+}
+form .course-details{
+    display: flex;
+    flex-direction: column;
+}
+.course-details label{
+    font-size: 17px;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0;
+    font-weight: 500;
+    padding-bottom: 5px;
+    margin-left: 0;
+}
+.course-details input{
+    height: 50px;
+    border: 1px solid #aaaaaa;
+    outline: none;
+    padding-left: 12px;
+    border-radius: 5px;
+    font-size: 15px;
+}
+.course_content form button{
+    margin-top: 40px;
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: green;
+    font-size: 15px;
+}
+
+
+
+
+
+
+/* ============================= Subject ================== */
+
+.item_subject{
+    height: 100vh;
+    width: 100%;
+    /* padding: 20px;
+    padding-bottom: 75px;
+    padding-right: 265px; */
+    padding: 90px 268px 10px 20px;
+    overflow-y: scroll;
+}
+.item_subject .title{
+    font-size: 20px;
+}
+.item_subject .subject_content{
+    background: #fff;
+    text-align: right;
+    padding: 20px;
+    border-radius: 5px;
+}
+.subject_content .btn-course{
+    padding-left: 80%;
+    padding-bottom: 20px;
+}
+.subject_content .btn-course a{
+    align-items: center;
+    text-decoration: none;
+    background: #4070f4;
+    display: flex;
+    padding: 12px;
+    border-radius: 5px;
+    width: 150px;
+    color: #fff;
+    gap: 5px;
+}
+.subject_content table{
+    border: 1px solid #aaaaaa;
+    border-collapse: collapse;
+}
+.subject_content table td a{
+    text-decoration: none;
+}
+.subject_content table td a:nth-child(1){
+    background: seagreen;
+    padding: 10px;
+    color: #fff;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.subject_content table td a:nth-child(2){
+    background: crimson;
+    padding: 10px;
+    color: #fff;
+    border-radius: 5px;
+}
+form {
+    text-align: left;
+}
+form .subject-details{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.subject-details label{
+    font-size: 17px;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0;
+    font-weight: 500;
+    padding-bottom: 5px;
+    margin-left: 0;
+}
+.subject-details input{
+    height: 50px;
+    border: 1px solid #aaaaaa;
+    outline: none;
+    padding-left: 12px;
+    border-radius: 5px;
+    font-size: 15px;
+}
+.subject_content form button{
+    margin-top: 40px;
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: green;
+    font-size: 15px;
+}
+.subject-details select{
+    height: 50px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #aaaaaa;
+}
+
+
+
+
+
+/* ================== Event Section ====================== */
+
+
+.item_events{
+    height: 100%;
+    width: 100%;
+    /* padding: 20px;
+    padding-right: 268px;
+    padding-bottom: 75px; */
+    padding: 90px 268px 10px 20px;
+    overflow-y: scroll;
+}
+.item_events .title{
+    font-size: 20px;
+}
+.event-content{
+    background: #fff;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 10px;
+}
+.event-content .btn-events{
+    padding-left: 80%;
+    padding-bottom: 20px;
+}
+
+.event-content .btn-events a{
+    align-items: center;
+    text-decoration: none;
+    background: #4070f4;
+    display: flex;
+    padding: 12px;
+    border-radius: 5px;
+    width: 150px;
+    color: #fff;
+    gap: 5px;
+}
+.event-content table{
+    border: 1px solid #aaaaaa;
+    border-collapse: collapse;
+}
+.event-content table td a{
+    text-decoration: none;
+}
+.event-content table .btns{
+    display: flex;
+    border: none;
+}
+/* .event-content table td a:nth-child(1){
+    background: seagreen;
+    padding: 10px;
+    color: #fff;
+    border-radius: 5px;
+    margin-right: 10px;
+} */
+.event-content table td a:nth-child(1){
+    background: crimson;
+    padding: 10px;
+    color: #fff;
+    border-radius: 5px;
+}
+
+
+
+
+/* ====================== Add Events =================== */
+.item_add_events{
+    height: 100%;
+    width: 100%;
+    /* padding: 20px;
+    padding-right: 268px;
+    padding-bottom: 75px; */
+    padding: 90px 268px 10px 20px;
+    overflow-y: scroll;
+}
+.item_add_events .title{
+    font-size: 20px;
+}
+.add_event_content{
+    background: #fff;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-radius: 5px;
+}
+.add_event_content form{
+    padding: 10px 25px 0 25px;
+}
+form .event_details{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.event_details .event-name{
+    font-size: 1.1rem;
+}
+.event_details input{
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid #aaaaaa;
+    outline: none;
+    padding-left: 10px;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+.event_details select{
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid #aaaaaa;
+    outline: none;
+    font-size: 0.9rem;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+.btn-event{
+    border: none;
+    padding: 15px;
+    margin: 30px 0;
+    border-radius: 5px;
+    background: #4070f4;
+    color: #fff;
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+
+
+
+/* ====================== ID cards ==================== */
+.item_id{
+    height: 100vh;
+    width: 100%;
+    /* padding: 20px;
+    padding-bottom: 75px; */
+    padding: 90px 268px 10px 20px;
+}
+.item_id .title{
+    font-size: 20px;
+}
+
+.item_id .id_content{
+    background: #fff;
+    text-align: right;
+    /* padding-right: 240px; */
+    padding-top: 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+.id-container{
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+}
+
+.id-container table{
+    height: 100%;
+    width: 100%;
+    border-collapse: collapse;
+}
+.item_id .id-container td, th{
+    border: 1px solid #ccc;
+    text-align: left;
+    padding: 17px;
+}
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+.action-btns{
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+.action-btns .id-display-btn:nth-child(1){
+    background: red;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: none;
+}
+
+
+.item_id_display{
+    height: 100vh;
+    width: 100%;
+    /* padding: 20px;
+    padding-bottom: 75px; */
+    padding: 90px 268px 0px 20px;
+}
+.item_id_display .title{
+    font-size: 20px;
+}
+.item_id_display .id_display_content{
+    height: 78vh;
+    background: #fff;
+    border-radius: 5px;
+    text-align: right;
+    padding-right: 240px;
+    padding-top: 20px;
+    margin-top: 10px;
+}
+.id-display-container{
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+}
+
+#popup{
+    height: 350px;
+    width: 204px;
+    background: #fff;
+    border-radius: 15px;
+    margin-top: 50px;
+    top: 0;
+    right: 30%;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.4);
+    transition: all 0.5s ease-in;
+}
+.popup-content .popup-logo-content{
+    background: #4070f4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.popup-content .popup-logo-content{
+    padding-right: 20px;
+}
+.popup-content .popup-logo-content .popup-logo img{
+    height: 50px;
+    border-radius: 50%;
+}
+.popup-content .popup-logo-content .popup-label{
+    margin-left: 10px;
+    text-align: center;
+}
+.popup-content .popup-logo-content .popup-label span{
+    font-weight: 600;
+    font-size: 15px;
+}
+.std-pop-details{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+.std-pop-details .id-title{
+    font-size: 13px;
+    padding: 2px;
+    font-weight: 550;
+}
+.std-pop-details img{
+    height: 60px;
+    width: 60px;
+    margin-bottom: 5px;
+}
+.std-pop-details .std-name{
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.std-popup-course,
+.std-popup-batch,
+.std-popup-mobile{
+    text-align: left;
+    padding-left: 15px;
+    width: 100%;
+}
+.std-popup-add{
+    text-align: left;
+    padding-left: 15px;
+    width: 100%;
+    padding-right: 10px;
+    line-height: 11px;
+}
+
+.std-popup-course .c,
+.std-popup-batch .b,
+.std-popup-mobile .m,
+.std-popup-add .a{
+    font-size: 13px;
+    font-weight: 500;
+}
+.std-popup-course .std-course,
+.std-popup-batch .batch,
+.std-popup-mobile .std-mobile{
+    font-weight: 500;
+    color: #4070f4;
+    font-size: 12px;
+}
+
+.std-popup-add .std-address{
+    font-weight: 500;
+    color: #4070f4;
+    font-size: 9px;
+}
+
+
+.std-popup-sign{
+    margin-top: 20px;
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+}
+.std-popup-sign img{
+    height: 20px;
+    margin-bottom: -3px;
+}
+.std-popup-sign .sign{
+    font-size: 10px;
+    font-family: cursive;
+}

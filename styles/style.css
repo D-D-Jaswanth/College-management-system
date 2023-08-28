@@ -1,0 +1,873 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background: #fff;
+    overflow-x: hidden;
+}
+body::-webkit-scrollbar{
+    width: 0;
+}
+header{
+    position: fixed;
+    background: #fff;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2vw 8vw;
+    box-shadow: 1px 1px 5px gray;
+}
+.logo label{
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+.navbar{
+    margin-left: 250px;
+}
+.navbar .navlinks{
+    display: flex;
+}
+.navbar ul li{
+    position: relative;
+    list-style: none;
+}
+.navbar ul li i{
+    margin-left: 10px;
+}
+.navbar ul li ul{
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 330px;
+    background: #fff;
+    display: none;
+}
+.navbar ul li ul li{
+    width: 100%;
+    padding: 12px;
+}
+.navbar ul li a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    margin-right: 25px;
+    transition: 0.5s ease;
+    color: #0BDA51;
+}
+
+ul li a:hover{
+    color: blueviolet;
+}
+.navbar ul li:focus > ul,
+.navbar ul li:hover > ul{
+    display: block;
+}
+
+.icons{
+    cursor: pointer;
+    font-size: 22px;
+}
+#menu-btn{
+    display: none;
+}
+.navlinks{
+    position: relative;
+}
+.navlinks #close-btn{
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+}
+
+/* Home Section start */
+
+
+.home .text{
+    height: 100vh;
+    width: 100%;
+    background-image: url(c1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover !important;
+    background-position: center !important;
+    text-align: center;
+    padding-top: 250px;
+}
+.text .content{
+    width: 100%;
+}
+.content h1{
+    font-size: 45px;
+    font-weight: 600;
+    color: black;
+}
+.content p{
+    font-size: 20px;
+    font-weight: 400;
+    color: black;
+}
+.btns{
+    margin-top: 30px;
+}
+.btns a{
+    text-decoration: none;
+    padding: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.btns a:nth-child(1){
+    background: #0BDA51;
+    color: #fff;
+    font-size: 17px;
+}
+.btns a:nth-child(2){
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 17px;
+}
+.btns a:nth-child(1):hover{
+    background: none;
+    border: 1px solid #fff;
+}
+.btns a:nth-child(2):hover{
+    background: #0BDA51;
+}
+
+/* Home Section End */
+
+
+/* Resuable codes */
+
+section{
+    height: 100vh;
+}
+
+
+/* About Section start */
+
+.about{
+    height: 60vh;
+    margin-top: 30px;
+    padding: 1vw 8vw;
+    text-align: center;
+}
+.about h1{
+    font-size: 40px;
+}
+.about h1 span{
+    color: green;
+}
+.section_about{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+.about-text label{
+    font-size: 25px;
+    font-weight: 400;
+}
+.about-text img{
+    margin-top: 30px;
+    height: 200px;
+    width: 300px;
+}
+.section-right{
+    margin-left: 70px;
+}
+
+/* About Section end */
+
+/* courses Section start */
+
+.courses{
+    margin-top: 50px;
+    height: 100%;
+    text-align: center;
+}
+.courses h1{
+    font-size: 40px;
+}
+.section_courses{
+    margin: 0vw 8vw;
+    padding-top: 50px;
+}
+.row{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-between;
+}
+.card{
+    width: 350px;
+    background: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px;
+    margin-right: 40px;
+    text-align: center;
+    display: none;
+    border-radius: 10px;
+}
+.card:nth-child(1),
+.card:nth-child(2),
+.card:nth-child(3){
+    display: block;
+}
+.card img{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 200px;
+    width: 100%;
+}
+.card h4{
+    margin: 20px;
+}
+.card .card-content{
+    margin: 20px;
+}
+.card .bottom-card-content{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+.bottom-card-content i,
+.bottom-card-content span{
+    color: gray;
+}
+.section_courses .show_more{
+    width: 100%;
+}
+.show_more button{
+    padding: 15px 30px;
+    text-decoration: none;
+    color: #fff;
+    border: none;
+    font-size: 17px;
+    cursor: pointer;
+    background: #0BDA51;
+}
+
+/* courses Section End */
+
+/* contact us Section Start */
+
+.contact{
+    height: 210vh;
+    margin-top: 30px;
+    text-align: center;
+    padding: 1vw 8vw;
+}
+.contact h1{
+    font-size: 40px;
+}
+.contact h1 span{
+    color: #0BDA51;
+    padding-left: 10px;
+}
+.section_contact{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+}
+.section-contact-left iframe{
+    height: 500px;
+    width: 500px;
+    margin-right: 150px;
+}
+.section-contact-middle{
+    height: 100%;
+    width: 100%;
+    padding: 170px 0;
+}
+.section-contact-middle .mobile,
+.section-contact-middle .mail,
+.section-contact-middle .address{
+    margin-bottom: 15px;
+}
+.section-contact-middle i{
+    margin-right: 10px;
+}
+.section-contact-middle label{
+    font-size: 17px;
+}
+
+.section-contact-right{
+    margin-top: 30px;
+    padding: 15px;
+    width: 100%;
+}
+.section-contact-right form input{
+    height: 65px;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid #eee;
+    background: #eee;
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+.section-contact-right form textarea{
+    border: 1px solid #eee;
+    background: #eee;
+    width: 100%;
+    outline: none;
+    padding-left: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+.section_contact form .sub-btn{
+    margin: 25px;
+}
+form #submit{
+    margin-top: 10px;
+    border: none;
+    color: #fff;
+    background: red;
+    font-size: 16px;
+    height: 60px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 10px;
+}
+/* contact us Section End */
+
+
+/* Footer Section Start */
+
+footer{
+    height: 70vh;
+    background: black;
+    padding: 1vw 10vw;
+}
+.section_footer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.section_footer label,
+.section_footer h3{
+    color: #fff;
+}
+.section_footer h3{
+    margin-bottom: 20px;
+}
+.adm{
+    display: flex;
+    flex-direction: column;
+}
+.adm label{
+    font-size: 17px;
+    margin-top: 10px;
+}
+.links{
+    display: flex;
+    flex-direction: column;
+}
+.links a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 17px;
+    margin-top: 10px;
+}
+.links a:hover{
+    color: #eee;
+}
+.departments{
+    display: flex;
+    flex-direction: column;
+}
+.departments label{
+    margin-top: 10px;
+    font-size: 17px;
+}
+
+/* Footer Section End */
+
+.copy{
+    height: 40px;
+    text-align: center;
+    padding: 6px 0;
+    background: #343434;
+    color: #fff;
+}
+
+
+
+
+/* Login Page */
+
+
+.login-container{
+    border-radius: 5px;
+    width: 500px;
+    margin-left: 32%;
+    margin-top: 5%;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+.login-container h1{
+    padding-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+.login-container form{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 20px;
+}
+form input{
+    height: 60px;
+    border: 1px solid #ccc;
+    background: #eee;
+    border-radius: 5px;
+    outline: none;
+    margin-bottom: 15px;
+    width: 100%;
+    padding-left: 10px;
+    font-size: 15px;
+}
+form .right-login{
+    text-align: right;
+    width: 100%;
+    padding: 10px 0;
+}
+form .right-login a{
+    margin-left: 200px;
+    text-decoration: none;
+}
+form .right-login a:hover,
+form .bottom-login a:hover{
+    text-decoration: underline;
+}
+    
+form .login-btn{
+    margin-top: 20px;
+    width: 100%;
+}
+.login-btn button{
+    padding: 15px 55px;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    background: #0BDA51;
+    font-size: 15px;
+    color: #fff;
+    cursor: pointer;
+}
+    
+.bottom-login{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.bottom-login label{
+    margin-right: 10px;
+    color: #ccc;
+}
+.bottom-login a{
+    text-decoration: none;
+}
+    
+/* Login Page End */
+
+
+
+
+/* ================ Register Page ================= */
+
+
+.register_body{
+    background: #fff;
+}
+.register-container{
+    margin-top: 3px;
+    border: 1px solid #ccc;
+    margin-left: 32%;
+    width: 600px;
+    text-align: center;
+    border-radius: 5px;
+}
+.register-container h1{
+    font-size: 25px;
+    padding: 15px;
+    font-weight: 500;
+}
+.register_form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+.register_form .name{
+    display: flex;
+    width: 100%;
+    gap: 15px;
+}
+.name input{
+    width: 100%;
+}
+.register_form  select{
+    height: 55px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 15px;
+    outline: none;
+    border: 1px solid #ccc;
+}
+.register_form input{
+    width: 100%;
+    height: 55px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background: #eee;
+    outline: none;
+    font-size: 15px;
+    padding-left: 10px;
+}
+.register-btn{
+    margin-top: 15px;
+    width: 100%;
+}
+.register-btn button{
+    padding: 15px;
+    margin-bottom: 10px;
+    width: 100%;
+    border: none;
+    background: green;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+}
+    
+.bottom-register{
+    margin-bottom: 20px;
+}
+.bottom-register label{
+    margin-right: 10px;
+    color: #ccc;
+}
+.bottom-register a{
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+
+/* ==================== Register Page End ================== */
+
+
+/* Media Queries */
+
+@media screen and (max-width: 480px) {
+
+    .header #menu-btn{
+        display: inline-block;
+        color: #0BDA51;
+    }
+    .header{
+        height: 80px;
+    }
+    .header .navlinks{
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 200px;
+        background: #fff;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .header a{
+        font-size: 18px;
+        font-weight: 500;
+        display: block;
+        margin: 25px 0;
+        text-align: center;
+    }
+    .header .active{
+        box-shadow: 0 0 0 100vw rgba(0, 0, 0, .8);
+        right: 0;
+    }
+    .header #close-btn{
+        display: block;
+    }
+
+
+
+
+    .text h1{
+        font-size: 30px;
+    }
+    .text p{
+        font-size: 17px;
+        font-weight: 400;
+        color: #fff;
+        margin-top: 30px;
+    }
+
+
+    
+    .about{
+        height: 120vh;
+        text-align: center;
+    }
+    .about h1{
+        font-size: 35px;
+    }
+    .section_about{
+        display: flex;
+        flex-direction: column;
+    }
+    .section-left img{
+        width: 380px;
+    }
+    .section-right{
+        margin-top: 10px;
+        margin-left: 0px;
+    }
+    
+
+
+
+
+    .courses{
+        padding-bottom: 20px;
+        margin-top: 0px;
+    }
+    .courses h1{
+        font-size: 35px;
+    }
+
+    .row{
+        display: grid;
+        grid-template-columns: 1fr !important;
+    }
+    .card{
+        width: 350px !important;
+    }
+    .card h4{
+        font-size: 16px;
+    }
+    .courses .show_more{
+        margin-left: 0px;
+    }
+
+
+    .contact{
+        height: 170vh;
+        padding: 0;
+        text-align: center;
+    }
+    .contact h1{
+        font-size: 35px;
+    }
+    .section_contact{
+        display: grid;
+        grid-template-columns: 1fr !important;
+    }
+    .section-contact-left{
+        padding: 10px;
+    }
+    .section-contact-left iframe{
+        height: 400px;
+        width: 370px;
+    }
+    .section-contact-middle{
+        height: 150px;
+        width: 94%;
+        padding: 20px;
+    }
+
+
+
+    footer{
+        height: 70vh;
+        padding: 40px 0;
+    }
+    .section_footer{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .section_footer .links{
+        margin-left: 10px;
+    }
+
+
+
+    /* ====================== Login Page ======================= */
+
+    .login-container{
+        margin-left: 0;
+        width: 390px;
+        margin-top: 130px;
+    }
+    .login-container h1{
+        padding-top: 30px;
+    }
+    
+
+    /* ================ Register Page =============== */
+
+    .register-container{
+        margin-left: 0;
+        width: 390px;
+        margin-top: 50px;
+    }
+    .register_form{
+        margin-left: 0;
+    }
+
+}
+
+
+@media (max-width: 768px){
+
+    .header #menu-btn{
+        display: inline-block;
+    }
+    .header{
+        height: 80px;
+    }
+    .header .navlinks{
+        position: fixed;
+        top: 0;
+        right: -350px;
+        width: 300px;
+        background: #fff;
+        height: 100%;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        overflow-y: scroll;
+    }
+    .header .navlinks::-webkit-scrollbar{
+        width: 0;
+    }
+    .header .navbar{
+        position: absolute;
+    }
+    .header .navbar ul li ul{
+        position: relative;
+        width: 100%;
+    }
+    .header .navbar ul li ul li{
+        background: #eee;
+    }
+    .header .navbar ul li ul li a{
+        display: block;
+        margin: 10px 0;
+    }
+    .header ul li a{
+        display: block;
+        margin: 25px 0;
+        text-align: center;
+    }
+    .header .active{
+        box-shadow: 0 0 0 100vw rgba(0, 0, 0, .8);
+        right: 0;
+    }
+    .header #close-btn{
+        display: block;
+    }
+
+
+    .text h1{
+        font-size: 30px;
+    }
+    .text p{
+        font-size: 17px;
+        font-weight: 400;
+        color: #fff;
+        margin-top: 30px;
+    }*/
+
+
+    .about{
+        height: 125vh;
+    }
+    .about .section_about{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .section-left img{
+        height: 300px;
+        width: 100%;
+        border-radius: 5px;
+    }
+    .section-right{
+        width: 100%;
+        margin-top: 20px;
+        margin-left: 0px;
+    }
+
+    
+
+    .courses{
+        margin-top: 10px;
+        height: 100%;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+    .section_courses{
+        margin: 0;
+    }
+    .row{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-left: 35px;
+    }
+    .card{
+        width: 320px;
+    }
+    .contact .section_contact{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 80px;
+    }
+    form #submit{
+        font-size: 17px;
+    }
+
+    .contact{
+        height: 100vh;
+        background: red;
+    }
+    .section-contact-left iframe{
+        height: 400px;
+        width: 400px;
+    }
+    .section-contact-middle{
+        margin-left: 0;
+    }
+
+
+    footer .section_footer{
+        padding: 0vw 8vw;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    footer .section_footer .departments{
+        margin-top: 50px;
+    }
+}
+
